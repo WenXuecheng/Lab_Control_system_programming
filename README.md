@@ -1,7 +1,2 @@
 # Lab_Control_system_programming
-# Lab_Control_system_programming
-# Lab_Control_system_programming
-# Lab_Control_system_programming
-# Lab_Control_system_programming
-# Lab_Control_system_programming
-# Lab_Control_system_programming
+
