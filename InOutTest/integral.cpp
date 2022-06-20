@@ -15,6 +15,10 @@ float Integral::getStateValue() const
 float Integral::getPrestateValue() const{
     return this->pre_state;
 }
+void Integral::InitValue() {
+    pre_state = 0;
+    state = 0;
+}
 float Integral::update(float input, float dt){
     pre_state = state;
     state = state + (prev_in+input)*dt/2;

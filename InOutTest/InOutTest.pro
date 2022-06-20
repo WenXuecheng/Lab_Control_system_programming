@@ -30,7 +30,6 @@ SOURCES += \
         main.cpp \
     plant.cpp \
     sin_f.cpp \
-    unit_delay.cpp \
         widget.cpp \
     qcustomplot.cpp \
     blocks/gain/gain.cpp
@@ -41,7 +40,6 @@ HEADERS += \
     integral.h \
     plant.h \
     sin_f.h \
-    unit_delay.h \
         widget.h \
     main.h \
     qcustomplot.h \

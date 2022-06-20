@@ -8,6 +8,7 @@ public:
     Integral(float init_state, float init_input);
     float getStateValue() const;
     float getPrestateValue() const;
+    void InitValue();
     float update(float input, float dt);
 private:
     float state;

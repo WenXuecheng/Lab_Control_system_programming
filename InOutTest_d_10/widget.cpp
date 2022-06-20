@@ -24,16 +24,16 @@ Widget::Widget(QWidget *parent) :
 	}
 
     // Set window size
-    this->setMinimumSize(640*1.8, 480*1.5);
+    this->setMinimumSize(640, 480);
 
     // Add main layout with two plots
     mainlayout = new QGridLayout(this);
     inputPlot = new QCustomPlot(this);
     outputPlot = new QCustomPlot(this);
 	mainlayout->addWidget(inputPlot, 0, 0);
-	mainlayout->addWidget(outputPlot, 0, 1);
-	inputPlot->addGraph();
-    outputPlot->addGraph();
+    mainlayout->addWidget(outputPlot, 0, 1);
+    inputPlot->addGraph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    outputPlot->addGraph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
 	startButton = new QPushButton("Start");
 	connect(startButton, &QPushButton::clicked, this, [=](){
@@ -67,6 +67,8 @@ Widget::Widget(QWidget *parent) :
     inputPlot->yAxis->setRange(-1, 4);
     outputPlot->xAxis->setRange(0, ENDOFTIME);
     outputPlot->yAxis->setRange(-1, 1);
+
+
 
     // --------------------------
     // Create the object here

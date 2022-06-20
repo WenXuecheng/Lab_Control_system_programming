@@ -7,7 +7,7 @@
 // Set stop time here
 // --------------------------
 #define ENDOFTIME 25
-#define SAMPLINGTIMEMSEC 10
+#define SAMPLINGTIMEMSEC 1000
 // --------------------------
 // Set stop time here
 // --------------------------
@@ -24,7 +24,7 @@ Widget::Widget(QWidget *parent) :
 	}
 
     // Set window size
-    this->setMinimumSize(640*1.8, 480*1.5);
+    this->setMinimumSize(640, 480);
 
     // Add main layout with two plots
     mainlayout = new QGridLayout(this);
@@ -32,8 +32,8 @@ Widget::Widget(QWidget *parent) :
     outputPlot = new QCustomPlot(this);
 	mainlayout->addWidget(inputPlot, 0, 0);
 	mainlayout->addWidget(outputPlot, 0, 1);
-	inputPlot->addGraph();
-    outputPlot->addGraph();
+    inputPlot->addGraph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    outputPlot->addGraph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
 	startButton = new QPushButton("Start");
 	connect(startButton, &QPushButton::clicked, this, [=](){
